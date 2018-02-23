@@ -4,10 +4,10 @@ public class MyStackException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	public MyStackException() {
-		super("MyStackException Occurs");
+		super( "MyStackException Occurs" );
 	}
-
-	public MyStackException(String message) {
-		super(message);
+	
+	public MyStackException( String message ) {
+		super( message );
 	}
 }

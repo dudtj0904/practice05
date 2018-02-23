@@ -1,5 +1,6 @@
 package prob5;
 
+<<<<<<< HEAD
 public class MyStack<T> {
 	private int top;
 	private T[] buffer;
@@ -42,5 +43,47 @@ public class MyStack<T> {
 		
 		buffer = temp;
 }
+=======
+public class MyStack {
+	private int top;
+	private String[] buffer;
+>>>>>>> branch 'master' of https://github.com/bitacademy-cafe24/practice05.git
 	
+	public MyStack( int capacity ) {
+		top = -1;
+		buffer = new String[ capacity ];
+	}
+	
+	public void push( String s ) {
+		if( top == buffer.length - 1 ) { //stack is full
+			resize();
+		}
+		
+		buffer[ ++top ] = s;
+	}
+	
+	public String pop() throws MyStackException {
+		if( isEmpty() ) {
+			throw new MyStackException( "stack is empty" ); 
+		}
+		
+		String result = buffer[ top ];
+		buffer[ top-- ] = null;
+		
+		return result;
+	}
+	
+	public boolean isEmpty() {
+		return top == -1;
+	}
+	
+	private void resize() {
+		String[] temp = new String[ buffer.length * 2 ];
+		for( int i = 0; i <= top; i++ ) {
+			temp[ i ] = buffer[ i ];
+		}
+		
+		buffer = temp;
+	}
+
 }
